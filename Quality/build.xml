@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-model 
+    href="/usr/share/php5/PEAR/data/phing/etc/phing-grammar.rng" 
+    type="application/xml" 
+    schematypens="http://relaxng.org/ns/structure/1.0" ?>
+<project name="LetH Player, PHP server" default="dist" basedir="../">
+	
+    <property name="builddir" value="${project.basedir}/Build" override="true" />
+    <property name="sources" value="${project.basedir}/Services" />
+    <property name="testdir" value="." />
+    <property name="phpdir" value="C:/wamp/bin/php/php5.3.1" />
+	
+    <fileset dir="${sources}" id="main_fileset">
+        <include name="**/*.php" />
+        <exclude name="autoload.php" />
+    </fileset>
+    
+    <target name="clean" description="Cleanup build artifacts">
+        <echo>Cleanup build artifacts</echo>
+
+        <delete dir="${builddir}/CB" />
+        <delete dir="${builddir}/Coverage" />
+        <delete dir="${builddir}/Docs" />
+        <delete dir="${builddir}/Logs" />
+        <delete dir="${builddir}/Reports" />
+        <delete dir="${builddir}/TestDox" />
+
+        <mkdir dir="${builddir}/CB" />
+        <mkdir dir="${builddir}/Coverage" />
+        <mkdir dir="${builddir}/Docs" />
+        <mkdir dir="${builddir}/Logs" />
+        <mkdir dir="${builddir}/Reports" />
+        <mkdir dir="${builddir}/TestDox" />
+    </target>
+ 	
+    <target name="phpab" description="Generate autoloader scripts">
+        <echo>Generate autoloader</echo>
+        <echo>Doesn't work, fail silently... Only use as a cheetsheat</echo>
+        <delete file="${project.basedir}/Services/autoload.php" />
+        <exec executable="phpab" dir="${sources}">
+            <arg value="--output" />
+            <arg path="autoload.php" />
+            <arg path="." />
+        </exec>
+    </target>
+ 	
+    <target name="phploc" description="Count project size">
+        <echo>Count project size</echo>
+        <exec executable="phploc">
+            <arg value="--log-csv" />
+            <arg value="${builddir}/Reports/phploc.csv" />
+            <arg path="${sources}" />
+        </exec>
+    </target>
+
+    <target name="PHPDepend" description="Calculate software metrics using PHP_Depend">
+        <echo>Calculate software metrics using PHP_Depend</echo>
+        <phpdepend>
+            <fileset refid="main_fileset" />
+            <logger type="jdepend-xml" outfile="${builddir}/Reports/jdepend.xml" />
+            <logger type="jdepend-chart" outfile="${builddir}/Reports/dependencies.svg" />
+            <logger type="overview-pyramid" outfile="${builddir}/Reports/overview-pyramid.svg" />
+        </phpdepend>
+    </target>
+ 	
+    <target name="phpmd" description="Perform project mess detection using PHPMD">
+        <echo>Perform project mess detection using PHPMD</echo>
+        <phpmd>
+            <fileset refid="main_fileset" />
+            <formatter type="xml" outfile="${builddir}/Reports/pmd.xml" />
+        </phpmd>
+    </target>
+ 	
+    <target name="phpcpd" description="Find duplicate code using PHPCPD">
+        <echo>Find duplicate code using PHPCPD</echo>
+        <phpcpd>
+            <fileset refid="main_fileset" />
+            <formatter type="pmd" outfile="${builddir}/Reports/pmd-cpd.xml" />
+        </phpcpd>
+    </target>
+ 	
+    <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer">
+        <echo>Find coding standard violations using PHP_CodeSniffer</echo>
+        <phpcodesniffer standard="PEAR" docGenerator="HTML" docFile="${builddir}/PHPCS/doc.html" encoding="UTF-8">
+            <fileset refid="main_fileset" />
+            <formatter type="checkstyle" outfile="${builddir}/Reports/checkstyle.xml"/>
+        </phpcodesniffer>
+    </target>
+ 	
+    <target name="phpunit">
+        <echo>Running phpunit test suite</echo>
+        <exec executable="phpunit" dir="C:\wamp\www\LetH-Player-Server\Quality"></exec>
+    </target>
+ 	
+    <target name="phpdocumentor2">
+        <echo>Gen project documentation</echo>
+        <exec command="phpdoc" dir="${project.basedir}/Quality" />
+    </target>
+ 	
+    <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
+        <echo>Aggregate tool output with PHP_CodeBrowser</echo>
+        <exec executable="phpcb" dir="C:\wamp\www\LetH-Player-Server">
+            <arg value="--log" />
+            <arg path="Build/Reports" />
+            <arg value="--source" />
+            <arg path="Services" />
+            <arg value="--output" />
+            <arg path="Build/CB" />
+        </exec>
+    </target>
+ 	
+    <target name="audit" depends="clean, phpab, phploc, PHPDepend, phpmd, phpcpd, phpcs, phpdocumentor2, phpcb">
+        <echo>Project audited</echo>
+    </target>
+ 	
+</project>

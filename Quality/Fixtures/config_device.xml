@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <printers needToPrint="false" addDate="false" addBarcod="false" dateFormat="dd-MM-yyyy hh:mm:ss" datePrefix="" barcodPrefix="">
+        <printer name="CITIZEN CBM1000 Type II" />
+    </printers>
+    <triggers>
+        <trigger type="Btn" action="gameinit" string="GOULOTTE2" port="COM4" />
+        <trigger type="Btn" action="gamelaunch" string="GOULOTTE2" port="COM4" />
+    </triggers>
+</config>

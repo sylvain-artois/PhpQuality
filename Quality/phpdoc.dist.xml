@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  	<files>
+    	<directory>../Services</directory>
+    	<ignore>Deprecated/*</ignore>
+    	<ignore>autoload.php</ignore>
+    	<file>**.php</file>
+  	</files>
+  	<title><![CDATA[LetH Player - PHP Server (Tanukis)]]></title>
+  	<logging>
+    	<level>info</level>
+    	<paths>
+        	<default>C:/wamp/www/LetHPHPServices/Build/Logs/{DATE}.log</default>
+        	<errors>C:/wamp/www/LetHPHPServices/Build/Logs/{DATE}.errors.log</errors>
+    	</paths>
+	</logging>
+  	<parser>
+    	<target>C:/wamp/www/LetHPHPServices/Build/Docs</target>
+    	<markers>
+    		<item>TODO</item>
+    		<item>@todo</item>
+  		</markers>
+  	</parser>
+  	<transformer>
+    	<target>C:/wamp/www/LetHPHPServices/Build/Docs</target>
+	</transformer>
+	<transformations>
+    	<template name="responsive" />
+	</transformations>
+</phpdoc>

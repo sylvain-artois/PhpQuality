@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <printers needToPrint="true" addDate="true" addBarcod="false" dateFormat="yyMMddHHmmssZ" datePrefix="" barcodPrefix="">
+    <printer name="CITIZEN CBM1000 Type II"/>
+  </printers>
+  <triggers>
+    <trigger type="BarCodeScanner" action="gameinit" string="BARCOD" port="COM2" />
+    <trigger type="IR" action="gameinit" string="154212" port="COM3"/>
+    <trigger type="IR" action="gamelaunch" string="154212" port="COM3"/>
+  </triggers>
+</config>

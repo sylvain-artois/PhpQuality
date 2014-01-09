@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataset>
+
+  <table name="campaign">
+    <column>id</column>
+    <column>name</column>
+    <column>distribution</column>
+    <column>beginTest</column>
+    <column>begin</column>
+    <column>end</column>
+    <column>randomRangeMin</column>
+    <column>randomRangePercent</column>
+    <column>allow_scheduleChange</column>
+    <column>allow_prizeListReport</column>
+    <column>numOccurBarCode</column>
+    <column>campaignOrDay</column>
+    <column>jackpotType</column>
+    <column>jackpotDesc</column>
+
+    <!-- Incomplete Campaign (no series defined) -->
+    <row>
+      <value>1332000000_incomplete</value>
+      <value>Incomplete</value>
+      <value>Regular</value>
+      <value>2012-02-01 00:00:00</value>
+      <value>2012-02-02 00:00:00</value>
+      <value>2012-02-06 00:00:00</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>1</value>
+      <value>D</value>
+      <value>None</value>
+      <null />
+    </row>
+
+
+    <!-- Simple Campaign -->
+    <row>
+      <value>1331109874_test</value>
+      <value>Test</value>
+      <value>Regular</value>
+      <value>2012-04-04 00:00:00</value>
+      <value>2012-04-04 00:00:00</value>
+      <value>2012-04-08 00:00:00</value>
+      <value>30</value>
+      <value>10</value>
+      <value>0</value>
+      <value>1</value>
+      <value>2</value>
+      <value>D</value>
+      <value>Predef</value>
+      <value><![CDATA[O:7:"Jackpot":7:{s:8:"prize_id";s:32:"1331109979_voyage-aux-seychelles";s:10:"time_start";s:8:"16:00:00";s:8:"time_end";s:8:"17:00:00";s:7:"message";N;s:4:"port";N;s:5:"delay";N;s:13:"_explicitType";s:7:"Jackpot";}]]></value>
+    </row>
+
+    <!-- Demo Campaign -->
+    <row>
+      <value>1340805973_demo</value>
+      <value>Test</value>
+      <value>Demo</value>
+      <value>2012-06-20 00:00:00</value>
+      <value>2012-06-21 00:00:00</value>
+      <value>2012-06-23 00:00:00</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>1</value>
+      <value>C</value>
+      <value>Prog</value>
+      <value><![CDATA[O:7:"Jackpot":7:{s:8:"prize_id";N;s:10:"time_start";s:8:"16:00:00";s:8:"time_end";s:8:"17:00:00";s:7:"message";N;s:4:"port";N;s:5:"delay";i:30;s:13:"_explicitType";s:7:"Jackpot";}]]></value>
+    </row>
+
+    <!-- Campaign with no more prize to win -->
+    <row>
+      <value>1331111111_no_more_prize</value>
+      <value>No more prizes</value>
+      <value>Regular</value>
+      <value>2012-04-04 00:00:00</value>
+      <value>2012-04-04 00:00:00</value>
+      <value>2012-04-05 00:00:00</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>1</value>
+      <value>C</value>
+      <value>None</value>
+      <null />
+    </row>
+
+    <!-- Campaign with allwinner algorithm -->
+    <row>
+      <value>1340987249_allwinner</value>
+      <value>Campagn allwinner</value>
+      <value>AllWinner</value>
+      <value>2012-07-01 00:00:00</value>
+      <value>2012-07-02 00:00:00</value>
+      <value>2012-07-04 00:00:00</value>
+      <value>5</value>
+      <value>0</value>
+      <value>0</value>
+      <value>1</value>
+      <value>0</value>
+      <value>D</value>
+      <value>None</value>
+      <null />
+    </row>
+
+    <!-- Campaign with cyclic algorithm -->
+    <row>
+      <value>1341048521_cyclic</value>
+      <value>Campagn cyclic</value>
+      <value>Cyclic</value>
+      <value>2012-07-01 00:00:00</value>
+      <value>2012-07-02 00:00:00</value>
+      <value>2012-07-04 00:00:00</value>
+      <value>5</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>1</value>
+      <value>C</value>
+      <value>None</value>
+      <null />
+    </row>
+
+
+  </table>
+
+  <table name="prize">
+    <column>id</column>
+    <column>id_campaign</column>
+    <column>name</column>
+    <column>is_jackpot</column>
+    <column>is_booby</column>
+    <column>is_lost</column>
+    <column>prize_nbr</column>
+    <column>allreadyDeal</column>
+
+    <!-- Simple Campaign -->
+    <row>
+      <value>1331109979_cle-usb</value>
+      <value>1331109874_test</value>
+      <value>cle usb</value>
+      <value>0</value>
+      <value>1</value>
+      <value>0</value>
+      <value>1</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value>1332320329_15-euros</value>
+      <value>1331109874_test</value>
+      <value>15 euros</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>2</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value>1332320329_50-euros</value>
+      <value>1331109874_test</value>
+      <value>50 Euros</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>3</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value>1331109979_voyage-aux-seychelles</value>
+      <value>1331109874_test</value>
+      <value>Voyage aux Seychelles</value>
+      <value>1</value>
+      <value>0</value>
+      <value>0</value>
+      <value>4</value>
+      <value>0</value>
+    </row>
+
+    <!-- Demo Campaign -->
+    <row>
+      <value>1340805999_bon-achat</value>
+      <value>1340805973_demo</value>
+      <value>bon d'achat</value>
+      <value>0</value>
+      <value>1</value>
+      <value>0</value>
+      <value>1</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value>1340805980_voyage-berlin</value>
+      <value>1340805973_demo</value>
+      <value>Voyage a Berlin</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>2</value>
+      <value>0</value>
+    </row>
+
+    <!-- Campaign with no more prize to win -->
+    <row>
+      <value>1331111111_porte-cles</value>
+      <value>1331111111_no_more_prize</value>
+      <value>porte cles</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>1</value>
+      <value>0</value>
+    </row>
+
+    <!-- Campaign with allwinner algorithm -->
+    <row>
+      <value>1340987249_console-de-jeu</value>
+      <value>1340987249_allwinner</value>
+      <value>console de jeu</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>1</value>
+      <value>0</value>
+    </row>
+
+    <row>
+      <value>1340987249_jeu-video</value>
+      <value>1340987249_allwinner</value>
+      <value>jeu video</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>2</value>
+      <value>0</value>
+    </row>
+
+    <row>
+      <value>1340987249_perdu</value>
+      <value>1340987249_allwinner</value>
+      <value>perdu</value>
+      <value>0</value>
+      <value>0</value>
+      <value>1</value>
+      <value>3</value>
+      <value>0</value>
+    </row>
+
+    <row>
+      <value>1340987249_ventilateur-usb</value>
+      <value>1340987249_allwinner</value>
+      <value>Ventilateur USB</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>4</value>
+      <value>0</value>
+    </row>
+
+    <row>
+      <value>1340987249_magnet</value>
+      <value>1340987249_allwinner</value>
+      <value>Magnet</value>
+      <value>0</value>
+      <value>1</value>
+      <value>0</value>
+      <value>5</value>
+      <value>0</value>
+    </row>
+
+    <!-- Campaign with cyclic algorithm -->
+    <row>
+      <value>1341048521_mug</value>
+      <value>1341048521_cyclic</value>
+      <value>Mug</value>
+      <value>0</value>
+      <value>0</value>
+      <value>0</value>
+      <value>1</value>
+      <value>0</value>
+    </row>
+
+    <row>
+      <value>1341048521_perdu</value>
+      <value>1341048521_cyclic</value>
+      <value>perdu</value>
+      <value>0</value>
+      <value>0</value>
+      <value>1</value>
+      <value>2</value>
+      <value>0</value>
+    </row>
+
+
+  </table>
+
+  <table name="dotation">
+    <column>id</column>
+    <column>id_campaign</column>
+    <column>sheetNumber</column>
+
+    <!-- Incomplete Campaign (no series defined) -->
+    <row>
+      <value>1332000000_dotation_1</value>
+      <value>1332000000_incomplete</value>
+      <value>1</value>
+    </row>
+
+
+    <!-- Simple Campaign -->
+    <row>
+      <value>1329132446_dotation_1</value>
+      <value>1331109874_test</value>
+      <value>1</value>
+    </row>
+
+    <row>
+      <value>1329132446_dotation_2</value>
+      <value>1331109874_test</value>
+      <value>1</value>
+    </row>
+
+    <!-- Demo Campaign -->
+    <row>
+      <value>1340805980_dotation_1</value>
+      <value>1340805973_demo</value>
+      <value>1</value>
+    </row>
+
+    <!-- Campaign with no more prize to win -->
+    <row>
+      <value>1331111111_dotation_1</value>
+      <value>1331111111_no_more_prize</value>
+      <value>1</value>
+    </row>
+
+    <!-- Campaign with allwinner algorithm -->
+    <row>
+      <value>1340987249_dotation_1</value>
+      <value>1340987249_allwinner</value>
+      <value>1</value>
+    </row>
+
+    <!-- Campaign with cyclic algorithm -->
+    <row>
+      <value>1341048521_dotation_1</value>
+      <value>1341048521_cyclic</value>
+      <value>1</value>
+    </row>
+
+  </table>
+
+  <table name="dotation_computed">
+    <column>id</column>
+    <column>id_campaign</column>
+    <column>day</column>
+    <column>serializedData</column>
+  </table>
+
+  <table name="terminalhasdotation">
+    <column>id</column>
+    <column>id_dotation</column>
+    <column>terminal_number</column>
+    <column>place</column>
+    <column>terminalNumberInMall</column>
+
+    <!-- Incomplete Campaign (no series defined) -->
+    <row>
+      <value></value>
+      <value>1332000000_dotation_1</value>
+      <value>1</value>
+      <value>Test</value>
+      <value>1</value>
+    </row>
+
+    <!-- Simple Campaign -->
+    <row>
+      <value></value>
+      <value>1329132446_dotation_1</value>
+      <value>1</value>
+      <value>Test</value>
+      <value>1</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1329132446_dotation_2</value>
+      <value>2</value>
+      <value>Test</value>
+      <value>1</value>
+    </row>
+
+    <!-- Demo Campaign -->
+    <row>
+      <value></value>
+      <value>1340805980_dotation_1</value>
+      <value>1</value>
+      <value>Test</value>
+      <value>1</value>
+    </row>
+
+    <!-- Campaign with no more prize to win -->
+    <row>
+      <value></value>
+      <value>1331111111_dotation_1</value>
+      <value>1</value>
+      <value>Test</value>
+      <value>1</value>
+    </row>
+
+    <!-- Campaign with allwinner algorithm -->
+    <row>
+      <value></value>
+      <value>1340987249_dotation_1</value>
+      <value>1</value>
+      <value>Test</value>
+      <value>1</value>
+    </row>
+
+    <!-- Campaign with cyclic algorithm -->
+    <row>
+      <value></value>
+      <value>1341048521_dotation_1</value>
+      <value>1</value>
+      <value>Test</value>
+      <value>1</value>
+    </row>
+
+  </table>
+
+  <table name="timetable">
+    <column>id</column>
+    <column>id_dotation</column>
+    <column>day</column>
+    <column>begin</column>
+    <column>end</column>
+
+    <!-- Simple Campaign -->
+    <row>
+      <value></value>
+      <value>1329132446_dotation_1</value>
+      <value>2012-04-04</value>
+      <value>09:00:00</value>
+      <value>13:00:00</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1329132446_dotation_1</value>
+      <value>2012-04-04</value>
+      <value>14:00:00</value>
+      <value>18:00:00</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1329132446_dotation_1</value>
+      <value>2012-04-05</value>
+      <value>09:00:00</value>
+      <value>13:00:00</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1329132446_dotation_1</value>
+      <value>2012-04-05</value>
+      <value>14:00:00</value>
+      <value>18:00:00</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1329132446_dotation_2</value>
+      <value>2012-04-04</value>
+      <value>09:00:00</value>
+      <value>13:00:00</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1329132446_dotation_2</value>
+      <value>2012-04-04</value>
+      <value>14:00:00</value>
+      <value>18:00:00</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1329132446_dotation_2</value>
+      <value>2012-04-05</value>
+      <value>09:00:00</value>
+      <value>13:00:00</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1329132446_dotation_2</value>
+      <value>2012-04-05</value>
+      <value>14:00:00</value>
+      <value>18:00:00</value>
+    </row>
+
+
+    <!-- Demo Campaign -->
+    <row>
+      <value></value>
+      <value>1340805980_dotation_1</value>
+      <value>2012-06-20</value>
+      <value>09:00:00</value>
+      <value>18:00:00</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1340805980_dotation_1</value>
+      <value>2012-06-21</value>
+      <value>09:00:00</value>
+      <value>18:00:00</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1340805980_dotation_1</value>
+      <value>2012-06-22</value>
+      <value>09:00:00</value>
+      <value>12:00:00</value>
+    </row>
+
+    <!-- Campaign with no more prize to win -->
+    <row>
+      <value></value>
+      <value>1331111111_dotation_1</value>
+      <value>2012-04-04</value>
+      <value>09:00:00</value>
+      <value>13:00:00</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331111111_dotation_1</value>
+      <value>2012-04-04</value>
+      <value>14:00:00</value>
+      <value>18:00:00</value>
+    </row>
+
+    <!-- Campaign with allwinner algorithm -->
+    <row>
+      <value></value>
+      <value>1340987249_dotation_1</value>
+      <value>2012-07-02</value>
+      <value>09:00:00</value>
+      <value>11:00:00</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1340987249_dotation_1</value>
+      <value>2012-07-02</value>
+      <value>14:00:00</value>
+      <value>16:00:00</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_dotation_1</value>
+      <value>2012-07-03</value>
+      <value>09:00:00</value>
+      <value>11:00:00</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1340987249_dotation_1</value>
+      <value>2012-07-03</value>
+      <value>14:00:00</value>
+      <value>16:00:00</value>
+    </row>
+
+    <!-- Campaign with cyclic algorithm -->
+    <row>
+      <value></value>
+      <value>1341048521_dotation_1</value>
+      <value>2012-07-02</value>
+      <value>09:00:00</value>
+      <value>19:00:00</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1341048521_dotation_1</value>
+      <value>2012-07-03</value>
+      <value>09:00:00</value>
+      <value>13:00:00</value>
+    </row>
+  </table>
+
+  <table name="series">
+    <column>id</column>
+    <column>id_campaign</column>
+    <column>number</column>
+    <column>series_start</column>
+    <column>series_end</column>
+    <column>toCompute</column> 	
+
+    <!-- Simple Campaign -->
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>355568</value>
+      <null />
+      <null />
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>355569</value>
+      <null />
+      <null />
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>355570</value>
+      <null />
+      <null />
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>355571</value>
+      <null />
+      <null />
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>355572</value>
+      <null />
+      <null />
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>355573</value>
+      <null />
+      <null />
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>355574</value>
+      <null />
+      <null />
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>355575</value>
+      <null />
+      <null />
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>355576</value>
+      <null />
+      <null />
+      <value>0</value>
+    </row>
+
+    <!-- Demo Campaign -->
+    <row>
+      <value></value>
+      <value>1340805973_demo</value>
+      <null />
+      <value>42000</value>
+      <value>44000</value>
+      <value>1</value>
+    </row>
+
+    <!-- Campaign with no more prize to win -->
+    <row>
+      <value></value>
+      <value>1331111111_no_more_prize</value>
+      <null />
+      <value>42000</value>
+      <value>44000</value>
+      <value>1</value>
+    </row>
+
+    <!-- Campaign with allwinner algorithm -->
+    <row>
+      <value></value>
+      <value>1340987249_allwinner</value>
+      <null />
+      <value>20000</value>
+      <value>30000</value>
+      <value>1</value>
+    </row>
+
+    <!-- Campaign with cyclic algorithm -->
+    <row>
+      <value></value>
+      <value>1341048521_cyclic</value>
+      <null />
+      <value>4000</value>
+      <value>5000</value>
+      <value>1</value>
+    </row>
+
+  </table>
+
+  <table name="prizehasdotation">
+    <column>id</column>
+    <column>id_prize</column>
+    <column>id_dotation</column>
+    <column>amount</column>
+    <column>_date</column>
+    <column>alreadydeal</column>
+    <column>winningtime</column>
+
+    <!-- Simple Campaign -->
+    <row>
+      <value></value>
+      <value>1331109979_cle-usb</value>
+      <value>1329132446_dotation_1</value>
+      <value>5</value>
+      <value>2012-04-04</value>
+      <value>0</value>
+      <null />
+    </row>
+    <row>
+      <value></value>
+      <value>1332320329_15-euros</value>
+      <value>1329132446_dotation_1</value>
+      <value>2</value>
+      <value>2012-04-04</value>
+      <value>1</value>
+      <null />
+    </row>
+    <row>
+      <value></value>
+      <value>1332320329_50-euros</value>
+      <value>1329132446_dotation_1</value>
+      <value>2</value>
+      <value>2012-04-04</value>
+      <value>1</value>
+      <value><![CDATA[a:2:{i:0;s:8:"14:30:00";i:1;s:8:"15:30:00";}]]></value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109979_voyage-aux-seychelles</value>
+      <value>1329132446_dotation_1</value>
+      <value>1</value>
+      <value>2012-04-04</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1331109979_cle-usb</value>
+      <value>1329132446_dotation_2</value>
+      <value>20</value>
+      <value>2012-04-04</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1332320329_15-euros</value>
+      <value>1329132446_dotation_2</value>
+      <value>5</value>
+      <value>2012-04-04</value>
+      <value>1</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1332320329_50-euros</value>
+      <value>1329132446_dotation_2</value>
+      <value>0</value>
+      <value>2012-04-04</value>
+      <value>1</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1331109979_voyage-aux-seychelles</value>
+      <value>1329132446_dotation_2</value>
+      <value>1</value>
+      <value>2012-04-04</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1331109979_cle-usb</value>
+      <value>1329132446_dotation_2</value>
+      <value>30</value>
+      <value>2012-04-05</value>
+      <value>0</value>
+      <null />
+    </row>
+    <row>
+      <value></value>
+      <value>1332320329_15-euros</value>
+      <value>1329132446_dotation_2</value>
+      <value>5</value>
+      <value>2012-04-05</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1332320329_50-euros</value>
+      <value>1329132446_dotation_2</value>
+      <value>1</value>
+      <value>2012-04-05</value>
+      <value>0</value>
+      <value><![CDATA[a:1:{i:0;s:8:"15:38:00";}]]></value>
+     </row>
+
+    <row>
+      <value></value>
+      <value>1331109979_voyage-aux-seychelles</value>
+      <value>1329132446_dotation_2</value>
+      <value>1</value>
+      <value>2012-04-05</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <!-- Demo Campaign -->
+    <row>
+      <value></value>
+      <value>1340805999_bon-achat</value>
+      <value>1340805980_dotation_1</value>
+      <value>5</value>
+      <value>2012-06-21</value>
+      <value>0</value>
+      <null />
+    </row>
+    <row>
+      <value></value>
+      <value>1340805980_voyage-berlin</value>
+      <value>1340805980_dotation_1</value>
+      <value>1</value>
+      <value>2012-06-21</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <!-- Campaign with no more prize to win -->
+    <row>
+      <value></value>
+      <value>1331111111_porte-cles</value>
+      <value>1331111111_dotation_1</value>
+      <value>2</value>
+      <value>2012-04-04</value>
+      <value>2</value>
+      <null />
+    </row>
+
+    <!-- Campaign with allwinner algorithm -->
+    <row>
+      <value></value>
+      <value>1340987249_console-de-jeu</value>
+      <value>1340987249_dotation_1</value>
+      <value>2</value>
+      <value>2012-07-02</value>
+      <value>0</value>
+      <value>a:2:{i:0;s:8:"10:30:00";i:1;s:8:"15:45:00";}</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_jeu-video</value>
+      <value>1340987249_dotation_1</value>
+      <value>7</value>
+      <value>2012-07-02</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_perdu</value>
+      <value>1340987249_dotation_1</value>
+      <value>12</value>
+      <value>2012-07-02</value>
+      <value>1</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_ventilateur-usb</value>
+      <value>1340987249_dotation_1</value>
+      <value>3</value>
+      <value>2012-07-02</value>
+      <value>3</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_magnet</value>
+      <value>1340987249_dotation_1</value>
+      <value>1</value>
+      <value>2012-07-02</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_console-de-jeu</value>
+      <value>1340987249_dotation_1</value>
+      <value>1</value>
+      <value>2012-07-03</value>
+      <value>0</value>
+      <value>a:1:{i:0;s:8:"15:30:00";}</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_jeu-video</value>
+      <value>1340987249_dotation_1</value>
+      <value>7</value>
+      <value>2012-07-03</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_perdu</value>
+      <value>1340987249_dotation_1</value>
+      <value>12</value>
+      <value>2012-07-03</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_ventilateur-usb</value>
+      <value>1340987249_dotation_1</value>
+      <value>3</value>
+      <value>2012-07-03</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_magnet</value>
+      <value>1340987249_dotation_1</value>
+      <value>1</value>
+      <value>2012-07-03</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <!-- Campaign with cyclic algorithm -->
+
+    <row>
+      <value></value>
+      <value>1341048521_mug</value>
+      <value>1341048521_dotation_1</value>
+      <value>3</value>
+      <value>2012-07-02</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1341048521_perdu</value>
+      <value>1341048521_dotation_1</value>
+      <value>7</value>
+      <value>2012-07-02</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1341048521_mug</value>
+      <value>1341048521_dotation_1</value>
+      <value>5</value>
+      <value>2012-07-03</value>
+      <value>0</value>
+      <null />
+    </row>
+
+    <row>
+      <value></value>
+      <value>1341048521_perdu</value>
+      <value>1341048521_dotation_1</value>
+      <value>5</value>
+      <value>2012-07-03</value>
+      <value>0</value>
+      <null />
+    </row>
+
+  </table>
+
+  <table name="logs">
+    <column>id</column>
+    <column>id_campaign</column>
+    <column>id_terminal</column>
+    <column>logtype</column>
+    <column>_datetime</column>
+    <column>tickets</column>
+    <column>data</column>
+    <column>barcod</column>
+    <column>prizeid</column>
+
+
+    <!-- Simple Campaign -->
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-04-04 10:00:00</value>
+      <null />
+      <null />
+      <value>355568</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-04-04 11:00:00</value>
+      <null />
+      <null />
+      <value>355569</value>
+      <value>1332320329_15-euros</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-04-04 11:30:00</value>
+      <null />
+      <null />
+      <value>355570</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-04-04 11:35:00</value>
+      <null />
+      <null />
+      <value>355570</value>
+      <value>1332320329_50-euros</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>1</value>
+      <value>1</value>
+      <value>2012-04-05 15:00:40</value>
+      <null />
+      <null />
+      <value>No-Barcod</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-04-06 10:00:00</value>
+      <null />
+      <null />
+      <value>355568</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-04-06 11:00:00</value>
+      <null />
+      <null />
+      <value>355568</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-04-06 11:30:00</value>
+      <null />
+      <null />
+      <value>355571</value>
+      <value>0</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1331109874_test</value>
+      <value>1</value>
+      <value>21</value>
+      <value>2012-04-08 18:30:00</value>
+      <null />
+      <null />
+      <value>355568</value>
+      <value>0</value>
+    </row>
+
+    <!-- Demo Campaign -->
+    <row>
+      <value></value>
+      <value>1340805973_demo</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-06-21 10:42:00</value>
+      <null />
+      <null />
+      <value>355568</value>
+      <value>0</value>
+    </row>
+
+    <!-- Campaign with no more prize to win -->
+
+    <row>
+      <value></value>
+      <value>1331111111_no_more_prize</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-04-04 11:40:00</value>
+      <null />
+      <null />
+      <value>42000</value>
+      <value>1331111111_porte-cles</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1331111111_no_more_prize</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-04-04 14:12:20</value>
+      <null />
+      <null />
+      <value>42042</value>
+      <value>1331111111_porte-cles</value>
+    </row>
+
+    <!-- Campaign with allwinner algorithm -->
+    <row>
+      <value></value>
+      <value>1340987249_allwinner</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-07-02 10:01:22</value>
+      <null />
+      <null />
+      <value>20050</value>
+      <value>1340987249_perdu</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_allwinner</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-07-02 10:02:00</value>
+      <null />
+      <null />
+      <value>20602</value>
+      <value>1340987249_ventilateur-usb</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_allwinner</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-07-02 10:03:00</value>
+      <null />
+      <null />
+      <value>20603</value>
+      <value>1340987249_ventilateur-usb</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>1340987249_allwinner</value>
+      <value>1</value>
+      <value>9</value>
+      <value>2012-07-02 10:05:00</value>
+      <null />
+      <null />
+      <value>20604</value>
+      <value>1340987249_ventilateur-usb</value>
+    </row>
+
+
+  </table>
+
+  <table name="users">
+    <column>u_id</column>
+    <column>u_email</column>
+    <column>u_password</column>
+    <column>u_type</column>
+    <column>id_campaign</column>
+
+    <!-- Simple campaign -->
+    <row>
+      <value></value>
+      <value>super_admin</value>
+      <value>azerty_super_admin</value>
+      <value>super_admin</value>
+      <value>1331109874_test</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>admin</value>
+      <value>azerty_admin</value>
+      <value>admin</value>
+      <value>1331109874_test</value>
+    </row>
+
+    <row>
+      <value></value>
+      <value>customer</value>
+      <value>azerty</value>
+      <value>customer</value>
+      <value>1331109874_test</value>
+    </row>
+
+    <!-- Demo Campaign -->
+    <row>
+      <value></value>
+      <value>super_admin</value>
+      <value>azerty_super_admin</value>
+      <value>super_admin</value>
+      <value>1340805973_demo</value>
+    </row>
+    <row>
+      <value></value>
+      <value>admin</value>
+      <value>azerty_admin</value>
+      <value>admin</value>
+      <value>1340805973_demo</value>
+    </row>
+    <row>
+      <value></value>
+      <value>customer</value>
+      <value>azerty</value>
+      <value>customer</value>
+      <value>1340805973_demo</value>
+    </row>
+
+    <!-- Campaign with no more prize to win -->
+    <row>
+      <value></value>
+      <value>super_admin</value>
+      <value>azerty_super_admin</value>
+      <value>super_admin</value>
+      <value>1331111111_no_more_prize</value>
+    </row>
+    <row>
+      <value></value>
+      <value>admin</value>
+      <value>azerty_admin</value>
+      <value>admin</value>
+      <value>1331111111_no_more_prize</value>
+    </row>
+    <row>
+      <value></value>
+      <value>customer</value>
+      <value>azerty</value>
+      <value>customer</value>
+      <value>1331111111_no_more_prize</value>
+    </row>
+
+    <!-- Campaign with allwinner algorithm -->
+    <row>
+      <value></value>
+      <value>super_admin</value>
+      <value>azerty_super_admin</value>
+      <value>super_admin</value>
+      <value>1340987249_allwinner</value>
+    </row>
+    <row>
+      <value></value>
+      <value>admin</value>
+      <value>azerty_admin</value>
+      <value>admin</value>
+      <value>1340987249_allwinner</value>
+    </row>
+    <row>
+      <value></value>
+      <value>customer</value>
+      <value>azerty</value>
+      <value>customer</value>
+      <value>1340987249_allwinner</value>
+    </row>
+
+    <!-- Campaign with cyclic algorithm -->
+    <row>
+      <value></value>
+      <value>super_admin</value>
+      <value>azerty_super_admin</value>
+      <value>super_admin</value>
+      <value>1341048521_cyclic</value>
+    </row>
+    <row>
+      <value></value>
+      <value>admin</value>
+      <value>azerty_admin</value>
+      <value>admin</value>
+      <value>1341048521_cyclic</value>
+    </row>
+    <row>
+      <value></value>
+      <value>customer</value>
+      <value>azerty</value>
+      <value>customer</value>
+      <value>1341048521_cyclic</value>
+    </row>
+
+  </table>
+
+  <table name="winningtime_computed">
+    <column>id</column>
+    <column>id_prize</column>
+    <column>_datetime</column>
+    <column>isValid</column>
+    <column>isJackpot</column>
+    <column>isFixedPrize</column>
+  </table>
+
+</dataset>
